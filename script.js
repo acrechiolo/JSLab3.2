@@ -50,7 +50,6 @@ class AddressBook {
 }
 let addressBook = new AddressBook();
 let formEl = document.querySelector("form");
-
 addressBook.add(
   "Snake Man",
   "imasnakeman@gmail.com",
@@ -90,17 +89,32 @@ addressBook.add(
   "Trailer Park Boy"
 );
 
-addressBook.deleteAt(0);
-
-addressBook.deleteByName;
-const print = function(addressBookReference) {
-  addressBookReference.contacts.forEach(contact => {
-    console.log(contact);
-  });
-};
-//Add a function named display. 
-//This function must update the DOM to display all the contacts from the AddressBook.
-
-function display(){
-    let displayContacts = document.
+function display() {
+  let container = document.querySelector(".contact-container");
+  container.innerHTML = "";
+  for (let contact of addressBook.contacts) {
+    let card = document.createElement("div");
+    let name = document.createElement("p");
+    name.innerText = `Name: ${contact.name}`;
+    card.append(name);
+    let email = document.createElement("p");
+    email.innerText = `Email: ${contact.email}`;
+    card.append(email);
+    let phone = document.createElement("p");
+    phone.innerText = `Phone: ${contact.phone}`;
+    card.append(phone);
+    let relation = document.createElement("p");
+    relation.innerText = `Relation: ${contact.relation}`;
+    card.append(relation);
+    container.append(card);
+  }
 }
+display();
+
+//let newContact = document.createElement(“div”);
+//     container.innerHTML="";
+//     container.classList.add("contact-container");
+//     document.querySelector(".contact-container").append(contacts);
+
+//     newContact.classList.add(“contact”);
+//     document.querySelector('.contact-container').append(newContact);
