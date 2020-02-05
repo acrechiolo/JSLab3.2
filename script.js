@@ -99,15 +99,18 @@ function display() {
     card.setAttribute("class", "contact-box");
   }
 }
+
 display();
 
-// let form = document.querySelector("form");
-// form.addEventListener("submit", e => {
-//     const formData = new formData (form);
-//     addressBook.add(formData.get("name"),
-//     addressBook.add(formData.get("email"),
-//     addressBook.add(formData.get("phone"),
-//     addressBook.add(formData.get("relation");
-//     display();
-
-// });
+let form = document.querySelector("form");
+form.addEventListener("submit", e => {
+  e.preventDefault();
+  const formData = new FormData(form);
+  addressBook.add(
+    formData.get("name"),
+    formData.get("email"),
+    formData.get("phone"),
+    formData.get("relation")
+  );
+  display();
+});

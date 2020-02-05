@@ -43,6 +43,9 @@ select {
   padding: 10px;
   display: flex;
   justify-content: center;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
 }
 .add {
   display: block;
@@ -65,8 +68,4 @@ select {
   border-radius: 5px;
   overflow: auto;
   padding: 10px;
-}
-p {
-  display: flex;
-  justify-content: flex-start;
 }
