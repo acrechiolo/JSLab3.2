@@ -50,12 +50,7 @@ class AddressBook {
 }
 let addressBook = new AddressBook();
 let formEl = document.querySelector("form");
-addressBook.add(
-  "Snake Man",
-  "imasnakeman@gmail.com",
-  "313.454.5555",
-  "some weirdo"
-);
+
 addressBook.add(
   "Alyssa Crechiolo",
   "alyssacrechiolo@gmail.com",
@@ -82,12 +77,6 @@ addressBook.add(
   "313.555.5107",
   "Friend"
 );
-addressBook.add(
-  "Ricky LaFleur",
-  "conkymustdie@gmail.com",
-  "1.333.444.5555",
-  "Trailer Park Boy"
-);
 
 function display() {
   let container = document.querySelector(".contact-container");
@@ -107,14 +96,18 @@ function display() {
     relation.innerText = `Relation: ${contact.relation}`;
     card.append(relation);
     container.append(card);
+    card.setAttribute("class", "contact-box");
   }
 }
 display();
 
-//let newContact = document.createElement(“div”);
-//     container.innerHTML="";
-//     container.classList.add("contact-container");
-//     document.querySelector(".contact-container").append(contacts);
+// let form = document.querySelector("form");
+// form.addEventListener("submit", e => {
+//     const formData = new formData (form);
+//     addressBook.add(formData.get("name"),
+//     addressBook.add(formData.get("email"),
+//     addressBook.add(formData.get("phone"),
+//     addressBook.add(formData.get("relation");
+//     display();
 
-//     newContact.classList.add(“contact”);
-//     document.querySelector('.contact-container').append(newContact);
+// });
