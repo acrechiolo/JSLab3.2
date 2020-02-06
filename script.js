@@ -81,20 +81,22 @@ addressBook.add(
 function display() {
   let container = document.querySelector(".contact-container");
   container.innerHTML = "";
+  let counter = 0;
   for (let contact of addressBook.contacts) {
     let card = document.createElement("div");
     let name = document.createElement("p");
     name.innerText = `Name: ${contact.name}`;
-    card.append(name);
     let email = document.createElement("p");
     email.innerText = `Email: ${contact.email}`;
-    card.append(email);
     let phone = document.createElement("p");
     phone.innerText = `Phone: ${contact.phone}`;
-    card.append(phone);
     let relation = document.createElement("p");
     relation.innerText = `Relation: ${contact.relation}`;
-    card.append(relation);
+    let icon = document.createElement("i");
+    icon.classList.add("fas", "fa-trash");
+    icon.setAttribute("index-number", `${counter}`);
+    card.append(name, email, phone, relation, icon);
+    counter++;
     container.append(card);
     card.setAttribute("class", "contact-box");
   }
@@ -112,5 +114,16 @@ form.addEventListener("submit", e => {
     formData.get("phone"),
     formData.get("relation")
   );
+  form.reset();
   display();
 });
+
+let cardsContainer = document.querySelector(`.contact-container`);
+cardsContainer.addEventListener("click", deleted);
+function deleted(event) {
+  if (event.target.className === "fas fa-trash") {
+    let trashIndex = event.target.getAttribute("index-number");
+    addressBook.deleteAt(trashIndex);
+    display();
+  }
+}

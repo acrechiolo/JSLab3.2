@@ -5,43 +5,42 @@ body {
   background-blend-mode: overlay;
   background-repeat: no-repeat;
   background-size: 100% 150vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
 }
 .big-box {
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
 }
 .form {
-  height: 450px;
-  width: 600px;
+  /* height: 450px; */
+  width: 50%;
   background-color: rgb(179, 178, 176, 0.6);
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
   border-radius: 5px;
+  padding: 20px;
+  margin: 20px 20px 0 20px;
 }
 h1 {
   color: white;
-  margin: 5px;
+  text-align: center;
+}
+label {
+  margin: 2px 0px 0px 10px;
 }
 input {
   border-radius: 5px;
   padding: 10px;
   display: flex;
   justify-content: center;
-  width: 545px;
   margin: 5px;
   background: #fff;
 }
 select {
-  width: 545px;
-  padding: 10px;
+  padding: 15px;
   display: flex;
+  margin: 5px 5px 0px 5px;
   justify-content: center;
   -webkit-appearance: none;
   -moz-appearance: none;
@@ -50,22 +49,32 @@ select {
 .add {
   display: block;
   text-align: center;
-  padding: 10px;
+  padding: 15px;
   border-radius: 5px;
-  width: 90%;
+  margin: 20px 5px 0px 5px;
 }
 
 .contact-container {
-  width: 80%;
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-around;
-  align-content: space-around;
-  margin: 20px;
+  justify-content: center;
+  align-content: center;
 }
 .contact-box {
   background-color: rgba(255, 255, 255, 0.8);
   border-radius: 5px;
-  overflow: auto;
   padding: 10px;
+  position: relative;
+  margin: 20px;
+}
+.fa-trash {
+  position: absolute;
+  border-radius: 50px;
+  color: red;
+  font-size: 20px;
+  border: 1px solid black;
+  padding: 20px;
+  background-color: white;
+  right: -20px;
+  bottom: -20px;
 }
